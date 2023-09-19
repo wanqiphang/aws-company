@@ -1,7 +1,5 @@
 #Install flask on EC2
-
 #Either add "sudo" before all commands or use "sudo su" first
-
 #Amazon Linux 2023
 
 #!/bin/bash 

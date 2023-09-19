@@ -28,7 +28,7 @@ def registration():
 # def home():
 #     return render_template('index.html')
 
-@app.route("/addCompany", methods=['POST'])
+@app.route("/addCompany", methods=['GET', 'POST'])
 def AddCompany():
     company_name = request.form['name']
     company_des = request.form['company']

@@ -24,9 +24,9 @@ table = 'company'
 def registration():
     return render_template('Registration.html')
 
-@app.route("/", methods=['POST'])
-def home():
-    return render_template('index.html')
+# @app.route("/", methods=['POST'])
+# def home():
+#     return render_template('index.html')
 
 @app.route("/addCompany", methods=['POST'])
 def AddCompany():

@@ -7,7 +7,7 @@
 #!/bin/bash 
 yum update -y 
 yum install git -y 
-https://github.com/wanqiphang/aws-company.git 
+git clone https://github.com/wanqiphang/aws-company.git 
 cd aws-company
 yum install python-pip -y 
 pip3 install flask pymysql boto3 

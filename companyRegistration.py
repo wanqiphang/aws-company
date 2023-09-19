@@ -20,15 +20,11 @@ db_conn = connections.Connection(
 output = {}
 table = 'company'
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/Registration", methods=['GET', 'POST'])
 def registration():
     return render_template('Registration.html')
 
-# @app.route("/", methods=['POST'])
-# def home():
-#     return render_template('index.html')
-
-@app.route("/addCompany", methods=['GET', 'POST'])
+@app.route("/addCompany", methods=['POST'])
 def AddCompany():
     company_name = request.form['name']
     company_des = request.form['company']

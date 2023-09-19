@@ -1,15 +1,1 @@
-#Install flask on EC2
 
-#Either add "sudo" before all commands or use "sudo su" first
-
-#Amazon Linux 2023
-
-#!/bin/bash
-yum update -y
-yum install git -y
-git clone https://github.com/lowchoonkeat/aws-live.git
-cd aws-live
-yum install python-pip -y
-pip3 install flask mariadb boto3
-yum install -y mariadb105-server
-python3 [pythonfile].py

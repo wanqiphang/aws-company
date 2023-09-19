@@ -35,7 +35,7 @@ def AddCompany():
         entry_req = request.form['requirement']
         image = request.files['company_image_file']
         
-        insert_sql = "INSERT INTO company VALUES (%s, %s, %s, %s, %s)"
+        insert_sql = "INSERT INTO company VALUES (%s, %s, %s, %s, %s, %s)"
         cursor = db_conn.cursor()
         
         if image.filename == "":

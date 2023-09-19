@@ -26,7 +26,6 @@ def registration():
 
 @app.route("/addCompany", methods=['POST'])
 def AddCompany():
-    if request.method == "POST":
         company_name = request.form['name']
         company_des = request.form['company']
         contact = request.form['contact']
@@ -73,8 +72,7 @@ def AddCompany():
 
         print("New Company Added Successfully")
         return render_template('index.html')
-    else:
-        return render_template('Registration.html')
+    
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)

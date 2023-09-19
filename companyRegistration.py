@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import mariadb
+from pymysql import connections
 import os
 import boto3
 from Company_.config import *
@@ -9,7 +9,7 @@ app = Flask(__name__)
 bucket = custombucket
 region = customregion
 
-db_conn = mariadb.Connection(
+db_conn = connections.Connection(
     host=customhost,
     port=3306,
     user=customuser,

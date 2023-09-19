@@ -9,5 +9,4 @@ git clone https://github.com/wanqiphang/aws-company.git
 cd aws-company
 yum install python-pip -y 
 pip3 install flask pymysql boto3 
-yum install -y mariadb105-server 
 python3 [pythonfile].py

@@ -21,11 +21,11 @@ output = {}
 table = 'company'
 
 @app.route("/", methods=['POST'])
-def home():
+def reg():
     return render_template('index.html')
 
 @app.route("/", methods=['GET', 'POST'])
-def registration():
+def home():
     return render_template('Registration.html')
 
 @app.route("/addCompany", methods=['POST'])

@@ -33,12 +33,12 @@ def AddCompany():
         email = request.form['email']
         work_des = request.form['work']
         entry_req = request.form['requirement']
-        company_image_file = request.files['company_image_file']
+        image = request.files['company_image_file']
         
         insert_sql = "INSERT INTO company VALUES (%s, %s, %s, %s, %s)"
         cursor = db_conn.cursor()
         
-        if company_image_file.filename == "":
+        if image.filename == "":
             return "Please select a file"
         
         try:
@@ -51,7 +51,7 @@ def AddCompany():
             
             try:
                 print("Data inserted in MariaDB RDS... uploading image to S3...")
-                s3.Bucket(custombucket).put_object(Key=company_image_file_name_in_s3, Body=company_image_file)
+                s3.Bucket(custombucket).put_object(Key=company_image_file_name_in_s3, Body=image)
                 bucket_location = boto3.client('s3').get_bucket_location(Bucket=custombucket)
                 s3_location = (bucket_location['LocationConstraint'])
 

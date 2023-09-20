@@ -15,7 +15,7 @@ def app():
     return render_template('Application.html')
 
 @app.route('/Jobs')
-def app():
+def job():
     return render_template('Jobs.html')
 
 # @app.route('/LogIn')

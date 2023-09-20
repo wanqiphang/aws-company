@@ -5,8 +5,8 @@
     <meta name="keywords" content="Create Jobs">
     <meta name="description" content="">
     <title>CreateJobs</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="CreateJobs.css" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nicepage.css') }}" media="screen">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/CreateJobs.css') }}" media="screen">
     <!-- <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script> -->
     <meta name="generator" content="Nicepage 5.17.1, nicepage.com">
@@ -19,14 +19,14 @@
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
-		"logo": "images/default-logo.png"
+		"logo": "images/default-logo.jpg"
 }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="CreateJobs">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-c28b"><a href="https://nicepage.com" class="u-image u-logo u-image-1">
-        <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
+        <img src="{{ url_for('static', filename='images/default-logo.jpg') }}" class="u-logo-image u-logo-image-1">
       </a><nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
         <div class="menu-collapse" style="font-size: 1.25rem; letter-spacing: 0px;">
           <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
@@ -55,12 +55,12 @@
           </div>
           <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
         </div>
-      </nav><img class="u-image u-image-contain u-image-default u-image-2" src="images/TARUMT1.png" alt="" data-image-width="416" data-image-height="121"><div class="u-border-1 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-1"></div></header>
+      </nav><img class="u-image u-image-contain u-image-default u-image-2" src="{{ url_for('static', filename='images/TARUMT1.jpg') }}" alt="" data-image-width="416" data-image-height="121"><div class="u-border-1 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-1"></div></header>
     <section class="u-clearfix u-section-1" id="sec-db1b">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">Create Jobs</h2>
         <div class="u-form u-form-1">
-          <form action={{ url_for('CreateJob') }}" method="POST" enctype="multipart/form-data" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+          <form action="{{ url_for('CreateJob') }}" method="POST" enctype="multipart/form-data" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-name">
               <label for="name-6b5d" class="u-label">Job Title</label>
               <input type="text" placeholder="Enter Job Title" id="name-6b5d" name="name" class="u-input u-input-rectangle" required="">

@@ -24,7 +24,7 @@ table = 'job'
 def CreateJob():
     return render_template('CreateJobs.html')
 
-@app.route("/addJob", methods=['POST'])
+@app.route("/Home", methods=['POST'])
 def AddJob():
     job_title = request.form['title']
     job_location = request.form['location']

@@ -11,11 +11,11 @@ def reg():
     return render_template('Registration.html')
 
 @app.route('/Application')
-def app():
+def Application():
     return render_template('Application.html')
 
 @app.route('/Jobs')
-def job():
+def Jobs():
     return render_template('Jobs.html')
 
 # @app.route('/LogIn')

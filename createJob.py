@@ -21,11 +21,11 @@ output = {}
 table = 'job'
 
 @app.route("/CreateJob", methods=['GET', 'POST'])
-def registration():
+def CreateJob():
     return render_template('CreateJobs.html')
 
 @app.route("/addJob", methods=['POST'])
-def AddCompany():
+def AddJob():
     job_title = request.form['title']
     job_location = request.form['location']
     min_req = request.form['minReq']

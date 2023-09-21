@@ -5,6 +5,7 @@ import boto3
 from config import *
 
 app = Flask(__name__)
+app.secret_key = "Company"
 
 bucket = custombucket
 region = customregion
@@ -168,41 +169,33 @@ def Application():
 def rejectStudentApplication(id):
     cursor = db_conn.cursor()
     status_change = 'rejected'
-    try:
-        cursor.execute("""
-            UPDATE StudentApplication
-            SET status = %s
-            WHERE student_id = %s
-        """, (status_change, id))
-        db_conn.commit() 
-        return redirect(url_for('indexCompany'))
-    except Exception as e:
-        # Print or log the error message to identify the issue
-        print(f"Error updating status: {str(e)}")
-        # Optionally, you can rollback the transaction if an error occurs
-        db_conn.rollback()
-    finally:
-        cursor.close()
+    cursor.execute("""
+        UPDATE StudentApplication
+        SET status = %s
+        WHERE student_id = %s
+    """, (status_change, id))
+    flash('Student Application Rejected Successfully')
+    db_conn.commit() 
+    cursor.close()
+    return redirect(url_for('indexCompany'))
+
+        
 
 @app.route('/approveStudentApplication/<string:id>', methods = ['POST', 'GET'])
 def approveStudentApplication(id):
     cursor = db_conn.cursor()
     status_change = 'approved'
-    try:
-        cursor.execute("""
-            UPDATE StudentApplication
-            SET status = %s
-            WHERE student_id = %s
-        """, (status_change, id))
-        db_conn.commit() 
-        return redirect(url_for('indexCompany'))
-    except Exception as e:
-        # Print or log the error message to identify the issue
-        print(f"Error updating status: {str(e)}")
-        # Optionally, you can rollback the transaction if an error occurs
-        db_conn.rollback()
-    finally:
-        cursor.close()
+    cursor.execute("""
+        UPDATE StudentApplication
+        SET status = %s
+        WHERE student_id = %s
+    """, (status_change, id))
+    flash('Student Application Approved Successfully')
+    db_conn.commit() 
+    cursor.close()
+    return redirect(url_for('indexCompany'))
+
+    
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)

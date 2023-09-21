@@ -113,7 +113,7 @@ def addJob():
             auto_generated_job_id = cursor.lastrowid
         finally:
             cursor.close()
-            return render_template('Jobs.html')
+            return redirect(url_for('Jobs'))
         
     # Handle the GET request here
     return render_template('AddJob.html')

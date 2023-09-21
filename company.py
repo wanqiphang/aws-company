@@ -31,7 +31,7 @@ def indexCompany():
 def registration():
     return render_template('Registration.html')
 
-@app.route("/Jobs", methods=['POST'])
+@app.route("/RegistrationProcess", methods=['POST'])
 def registrationProcess():
     company_name = request.form['name']
     company_des = request.form['company']
@@ -77,7 +77,7 @@ def registrationProcess():
     finally:
         cursor.close()
 
-    return render_template('Jobs.html')
+    return redirect(url_for('Jobs'))
 
 # Job
 @app.route("/Jobs", methods=['GET'])
@@ -137,7 +137,7 @@ def editJob(id):
         cursor.close()
 
         # Redirect to the jobs page after editing
-        return render_template('Jobs.html')
+        return redirect(url_for('Jobs'))
 
 #
 @app.route("/delete/<string:id>", methods=['GET'])
@@ -151,7 +151,7 @@ def deleteJob(id):
     cursor.close()
 
     # Redirect to the jobs page after deleting
-    return render_template('Jobs.html')
+    return redirect(url_for('Jobs'))
 
 # Application
 @app.route("/Application", methods=['GET'])

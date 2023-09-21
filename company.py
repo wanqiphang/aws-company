@@ -118,7 +118,7 @@ def editJob(id):
     cursor = db_conn.cursor()
     if request.method == 'GET':
             # Fetch the job details from the database based on the provided 'id'
-            cursor.execute('SELECT * FROM job WHERE job_title = %s', (id))
+            cursor.execute('SELECT * FROM job WHERE job_title = %s', (id,))
             job = cursor.fetchone()
 
             if job:

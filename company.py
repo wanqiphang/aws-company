@@ -173,7 +173,6 @@ def rejectStudentApplication(id):
             SET status = %s
             WHERE student_id = %s
         """, (status_change, id))
-    flash('Student Application Rejected Successfully')
     db_conn.commit() 
     return redirect(url_for('indexCompany'))
 
@@ -186,7 +185,6 @@ def approveStudentApplication(id):
             SET status = %s
             WHERE student_id = %s
         """, (status_change, id))
-    flash('Student Application Approved Successfully')
     db_conn.commit() 
     return redirect(url_for('indexCompany'))
 

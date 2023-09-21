@@ -71,11 +71,13 @@
                 <td class="u-palette-1-base u-table-cell u-table-cell-1">Name</td>
                 <td class="u-palette-1-base u-table-cell u-table-cell-2">Student id</td>
                 <td class="u-palette-1-base u-table-cell u-table-cell-3">date</td>
+                <td class="u-palette-1-base u-table-cell u-table-cell-3">status</td>
                 <td class="u-palette-1-base u-table-cell u-table-cell-4">Action</td>
               </tr>
               
               {% for data in application %}
               <tr style="height: 83px;">
+                <td class="u-table-cell">{{ data[0] }}</td>
                 <td class="u-table-cell">{{ data[1] }}</td>
                 <td class="u-table-cell">{{ data[2] }}</td>
                 <td class="u-table-cell">{{ data[3] }}</td>

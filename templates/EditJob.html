@@ -60,28 +60,27 @@
         <h2 class="u-text u-text-default u-text-1">Edit Job</h2>
         <div class="u-form u-form-1">
             <div class="u-form u-form-1">
-                <form action="{{ url_for('editJob', id=job_id) }}" method="POST" enctype="multipart/form-data" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
-                  <div class="u-form-group u-form-name">
-                    <label for="name-c8ea" class="u-label">Job Title</label>
-                    <input type="text" id="name-c8ea" name="job_title" class="u-input u-input-rectangle" value="{{ job.job_title }}" required="">
-                  </div>
-                  <div class="u-form-email u-form-group">
-                    <label for="email-c8ea" class="u-label">Location</label>
-                    <input type="text" id="text-4ad5" name="job_location" class="u-input u-input-rectangle" value="{{ job.job_location }}" required="">
-                  </div>
-                  <div class="u-form-group u-form-group-3">
-                    <label for="text-ee7a" class="u-label">Minimum Requirements</label>
-                    <input type="text" id="text-ee7a" name="min_req" class="u-input u-input-rectangle" value="{{ job.min_req }}">
-                  </div>
-                  <div class="u-align-left u-form-group u-form-submit">
-            
-                    <input type="submit" value="submit" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-7">
+                <form action="{{ url_for('Jobs', id=job_id) }}" method="POST" enctype="multipart/form-data" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+                    <div class="u-form-group u-form-name">
+                        <label for="name-c8ea" class="u-label">Job Title</label>
+                        <input type="text" id="name-c8ea" name="job_title" class="u-input u-input-rectangle" value="{{ job.job_title }}" required="">
+                    </div>
+                    <div class="u-form-email u-form-group">
+                        <label for="email-c8ea" class="u-label">Location</label>
+                        <input type="text" id="text-4ad5" name="job_location" class="u-input u-input-rectangle" value="{{ job.job_location }}" required="">
+                    </div>
+                    <div class="u-form-group u-form-group-3">
+                        <label for="text-ee7a" class="u-label">Minimum Requirements</label>
+                        <input type="text" id="text-ee7a" name="min_req" class="u-input u-input-rectangle" value="{{ job.min_req }}">
+                    </div>
+                    <div class="u-align-left u-form-group u-form-submit">
+                        <input type="submit" value="submit" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-7">
                     </div>
                     <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                     <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                     <input type="hidden" value="" name="recaptchaResponse">
                     <input type="hidden" name="formServices" value="c5607ebc-d3e1-738d-4dc8-1e5dc1cac5f0">
-                  </form>
+                </form>
                 </div>
                   
                   

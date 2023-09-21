@@ -99,15 +99,14 @@ def addJob():
     job_title = request.form['title']
     job_location = request.form['location']
     min_req = request.form['minReq']
-    
-    insert_sql = "INSERT INTO job VALUES (%s, %s, %s)"
+    # Retrieve the auto-generated job_id
+    auto_generated_job_id = cursor.lastrowid
+    insert_sql = "INSERT INTO job VALUES (%s, %s, %s, %s)"
     cursor = db_conn.cursor()
     
     try:
-        cursor.execute(insert_sql, (job_title, job_location, min_req))
+        cursor.execute(insert_sql, (auto_generated_job_id, job_title, job_location, min_req))
         db_conn.commit()
-        # Retrieve the auto-generated job_id
-        auto_generated_job_id = cursor.lastrowid
 
     finally:
         cursor.close()

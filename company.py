@@ -100,7 +100,7 @@ def addJob():
     job_location = request.form['location']
     min_req = request.form['minReq']
     
-    insert_sql = "INSERT INTO job VALUES (%s, %s, %s, %s)"
+    insert_sql = "INSERT INTO job VALUES (%s, %s, %s)"
     cursor = db_conn.cursor()
     
     try:

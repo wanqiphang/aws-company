@@ -76,9 +76,9 @@
 
               {% for data in job %}
               <tr style="height: 74px;">
-                  <td class="u-table-cell">{{ job[1] }}</td>
-                  <td class="u-table-cell">{{ job[2] }}</td>
-                  <td class="u-table-cell">{{ job[3] }}</td>
+                  <td class="u-table-cell">{{ data[1] }}</td>
+                  <td class="u-table-cell">{{ data[2] }}</td>
+                  <td class="u-table-cell">{{ data[3] }}</td>
                   <td class="u-table-cell">
                       <a class="u-active-grey-60 u-border-1 u-border-active-grey-60 u-border-grey-60 u-border-hover-grey-60 u-btn u-button-style u-hover-grey-60 u-white u-btn-2" href="{{ url_for('editJob', id=job[0]) }}">Edit</a>
                       <a class="u-active-grey-60 u-border-1 u-border-active-grey-60 u-border-grey-60 u-border-hover-grey-60 u-btn u-button-style u-hover-grey-60 u-white u-btn-2" href="{{ url_for('deleteJob', id=job[0]) }}">Delete</a>

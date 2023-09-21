@@ -171,7 +171,7 @@ def rejectStudentApplication(id):
     cursor.execute("""
             UPDATE StudentApplication
             SET status = %s
-            WHERE studentID = %s
+            WHERE student_id = %s
         """, (status_change, id))
     flash('Student Application Rejected Successfully')
     db_conn.commit() 
@@ -184,7 +184,7 @@ def approveStudentApplication(id):
     cursor.execute("""
             UPDATE StudentApplication
             SET status = %s
-            WHERE studentID = %s
+            WHERE student_id = %s
         """, (status_change, id))
     flash('Student Application Approved Successfully')
     db_conn.commit() 

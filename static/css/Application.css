@@ -63,6 +63,12 @@
 
 .u-section-1 .u-table-cell-4 {
   background-image: none;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.u-section-1 .u-table-cell-5 {
+  background-image: none;
   text-transform: uppercase;
   font-weight: 700;
 }

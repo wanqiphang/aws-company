@@ -82,8 +82,8 @@
                 <td class="u-table-cell">{{ data[2] }}</td>
                 <td class="u-table-cell">{{ data[3] }}</td>
                 <td class="u-table-cell">
-                    <a class="u-active-grey-60 u-border-1 u-border-active-grey-60 u-border-grey-60 u-border-hover-grey-60 u-btn u-button-style u-hover-grey-60 u-white u-btn-2" href="{{ url_for('approveStudentApplication', id=data[0]) }}" target="_blank">Approve</a>
-                    <a class="u-active-grey-60 u-border-1 u-border-active-grey-60 u-border-grey-60 u-border-hover-grey-60 u-btn u-button-style u-hover-grey-60 u-white u-btn-2" href="{{ url_for('rejectStudentApplication', id=data[0]) }}" target="_blank">Reject</a>
+                    <a class="u-active-grey-60 u-border-1 u-border-active-grey-60 u-border-grey-60 u-border-hover-grey-60 u-btn u-button-style u-hover-grey-60 u-white u-btn-2" href="/approveStudentApplication/{{data[0]}}" target="_blank">Approve</a>
+                    <a class="u-active-grey-60 u-border-1 u-border-active-grey-60 u-border-grey-60 u-border-hover-grey-60 u-btn u-button-style u-hover-grey-60 u-white u-btn-2" href="/rejectStudentApplication/{{data[0]}}" target="_blank">Reject</a>
                 </td>
             </tr>
             {% endfor %}
@@ -91,6 +91,18 @@
           </table>
         </div>
       </div>
+
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <div class="popup-msg" role="alert">
+        <span class="msg">{{ message }}</span>
+        <input type="button" class="close-msg" value=&#10006 onclick=delete_flash(this)>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+
     </section>
     
     

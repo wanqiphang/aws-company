@@ -177,7 +177,7 @@ def rejectStudentApplication(id):
     flash('Student Application Rejected Successfully')
     db_conn.commit() 
     cursor.close()
-    return redirect(url_for('indexCompany'))
+    return redirect(url_for('Application'))
 
         
 
@@ -193,7 +193,7 @@ def approveStudentApplication(id):
     flash('Student Application Approved Successfully')
     db_conn.commit() 
     cursor.close()
-    return redirect(url_for('indexCompany'))
+    return redirect(url_for('Application'))
 
     
 

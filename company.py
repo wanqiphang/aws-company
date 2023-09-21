@@ -118,7 +118,7 @@ def editJob(id):
     cursor = db_conn.cursor()
     if request.method == 'GET':
             # Fetch the job details from the database based on the provided 'id'
-            cursor.execute("SELECT * FROM job WHERE job_title = %s", (id))
+            cursor.execute('SELECT * FROM job WHERE job_title = %s', (id))
             job = cursor.fetchone()
 
             if job:
@@ -131,7 +131,7 @@ def editJob(id):
         job_location = request.form['job_location']
         min_req = request.form['min_req']
 
-        cursor.execute("UPDATE job SET job_title = %s, job_location = %s, min_req = %s WHERE job_title = %s",
+        cursor.execute('UPDATE job SET job_title = %s, job_location = %s, min_req = %s WHERE job_title = %s',
                     (job_title, job_location, min_req, id))
         db_conn.commit()
 
@@ -169,11 +169,7 @@ def Application():
 def rejectStudentApplication(id):
     cursor = db_conn.cursor()
     status_change = 'rejected'
-    cursor.execute("""
-        UPDATE StudentApplication
-        SET status = %s
-        WHERE student_id = %s
-    """, (status_change, id))
+    cursor.execute('UPDATE StudentApplication SET status = %s WHERE student_id = %s', (status_change, id))
     flash('Student Application Rejected Successfully')
     db_conn.commit() 
     cursor.close()
@@ -185,11 +181,7 @@ def rejectStudentApplication(id):
 def approveStudentApplication(id):
     cursor = db_conn.cursor()
     status_change = 'approved'
-    cursor.execute("""
-        UPDATE StudentApplication
-        SET status = %s
-        WHERE student_id = %s
-    """, (status_change, id))
+    cursor.execute('UPDATE StudentApplication SET status = %s WHERE student_id = %s', (status_change, id))
     flash('Student Application Approved Successfully')
     db_conn.commit() 
     cursor.close()

@@ -96,22 +96,26 @@ def CreateJobs():
 
 @app.route("/Jobs", methods=['POST'])
 def addJob():
-    job_title = request.form['title']
-    job_location = request.form['location']
-    min_req = request.form['minReq']
-    # Retrieve the auto-generated job_id
-    auto_generated_job_id = cursor.lastrowid
-    insert_sql = "INSERT INTO job VALUES (%s, %s, %s, %s)"
-    cursor = db_conn.cursor()
-    
-    try:
-        cursor.execute(insert_sql, (auto_generated_job_id, job_title, job_location, min_req))
-        db_conn.commit()
-
-    finally:
-        cursor.close()
-
-    return render_template('Jobs.html')
+    if request.method == 'POST':
+        job_title = request.form['title']
+        job_location = request.form['location']
+        min_req = request.form['minReq']
+        # Retrieve the auto-generated job_id
+        auto_generated_job_id = cursor.lastrowid
+        insert_sql = "INSERT INTO job VALUES (%s, %s, %s)"
+        cursor = db_conn.cursor()
+        
+        try:
+            cursor.execute(insert_sql, (job_title, job_location, min_req))
+            db_conn.commit()
+            # Get the auto-generated job_id
+            auto_generated_job_id = cursor.lastrowid
+        finally:
+            cursor.close()
+            return render_template('Jobs.html')
+        
+    # Handle the GET request here
+    return render_template('AddJob.html')
 
 #
 @app.route("/edit/<string:id>", methods=['POST', 'GET'])

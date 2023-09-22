@@ -176,7 +176,7 @@ def rejectStudentApplication(id):
     cursor = db_conn.cursor()
     status_change = 'rejected'
     cursor.execute('UPDATE StudentApplication SET status = %s WHERE student_id = %s', (status_change, id))
-    flash('Student Application Rejected Successfully', 'success')
+    flash('Student Application Rejected Successfully', 'error')
     db_conn.commit() 
     cursor.close()
     return redirect(url_for('Application'))

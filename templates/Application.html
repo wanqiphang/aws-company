@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/Application.css') }}" media="screen">
     <!-- <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script> -->
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='script/script.js')}}"
+    defer=""></script>
     <meta name="generator" content="Nicepage 5.17.1, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
@@ -111,8 +113,11 @@
                 <td class="u-table-cell">{{ data[2] }}</td>
                 <td class="u-table-cell">{{ data[3] }}</td>
                 <td class="u-table-cell">
-                    <a class="u-active-grey-60 u-border-1 u-border-active-grey-60 u-border-grey-60 u-border-hover-grey-60 u-btn u-button-style u-hover-grey-60 u-white u-btn-2" href="/approveStudentApplication/{{data[0]}}" target="_blank">Approve</a>
-                    <a class="u-active-grey-60 u-border-1 u-border-active-grey-60 u-border-grey-60 u-border-hover-grey-60 u-btn u-button-style u-hover-grey-60 u-white u-btn-2" href="/rejectStudentApplication/{{data[0]}}" target="_blank">Reject</a>
+                  <a href="/approveStudentApplication/{{data[0]}}" class="btn-approve"> Approve</a>
+                  <a href="/rejectStudentApplication/{{data[0]}}" class="btn-reject"> Reject</a>
+                  
+                    {% comment %} <a class="u-active-grey-60 u-border-1 u-border-active-grey-60 u-border-grey-60 u-border-hover-grey-60 u-btn u-button-style u-hover-grey-60 u-white u-btn-2" href="/approveStudentApplication/{{data[0]}}" target="_blank">Approve</a>
+                    <a class="u-active-grey-60 u-border-1 u-border-active-grey-60 u-border-grey-60 u-border-hover-grey-60 u-btn u-button-style u-hover-grey-60 u-white u-btn-2" href="/rejectStudentApplication/{{data[0]}}" target="_blank">Reject</a> {% endcomment %}
                 </td>
             </tr>
             {% endfor %}

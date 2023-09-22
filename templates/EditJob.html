@@ -60,8 +60,7 @@
         <h2 class="u-text u-text-default u-text-1">Edit Job</h2>
         <div class="u-form u-form-1">
             <div class="u-form u-form-1">
-                <form action="{{ url_for('editJob', id=job_id) }}" method="POST" enctype="multipart/form-data" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
-                    <input type="hidden" name="job_id" value="{{ job.job_id }}">
+                <form action="{{ url_for('Jobs', id=job_id) }}" method="POST" enctype="multipart/form-data" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
                     <div class="u-form-group u-form-name">
                         <label for="name-c8ea" class="u-label">Job Title</label>
                         <input type="text" id="name-c8ea" placeholder="Name" name="job_title" class="u-input u-input-rectangle" value="{{ job.job_title }}" required="">

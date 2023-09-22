@@ -132,7 +132,7 @@ def editJob(id):
 
     elif request.method == 'POST':
         # Update the job details in the database based on the form submission
-        job_id = request.form[id]
+        job_id = request.form['job_id']
         job_title = request.form['job_title']
         job_location = request.form['job_location']
         min_req = request.form['min_req']

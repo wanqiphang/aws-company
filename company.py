@@ -105,7 +105,7 @@ def addJob():
         cursor = db_conn.cursor()
         
         try:         
-            insert_sql = "INSERT INTO job VALUES (%s, %s, %s)"
+            insert_sql = "INSERT INTO job (job_title, job_location, min_req) VALUES (%s, %s, %s)"
             cursor.execute(insert_sql, (job_title, job_location, min_req))
             db_conn.commit()
             # Get the auto-generated job_id

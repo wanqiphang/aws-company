@@ -150,7 +150,7 @@
         </div>
       </div>
 
-      {% with messages = get_flashed_messages() %}
+      {% comment %} {% with messages = get_flashed_messages() %}
       {% if messages %}
       {% for message in messages %}
       <div class="popup-msg" role="alert">
@@ -159,7 +159,7 @@
       </div>
       {% endfor %}
       {% endif %}
-      {% endwith %}
+      {% endwith %} {% endcomment %}
 
     </section>
     

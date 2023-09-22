@@ -138,7 +138,7 @@ def editJob(id):
         min_req = request.form['min_req']
 
         cursor.execute('UPDATE job SET job_title = %s, job_location = %s, min_req = %s WHERE job_id = %s',
-                    (job_title, job_location, min_req, job_id))
+                    (job_title, job_location, min_req, id))
         db_conn.commit()
 
         cursor.close()

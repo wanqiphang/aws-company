@@ -129,8 +129,10 @@
 }
 
 .u-section-1 .u-btn-7 {
-  background-image: none;
-  padding: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 53px 60px 37px auto;
 }
 
 .u-section-1 .u-table-cell-18 {

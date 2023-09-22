@@ -171,6 +171,15 @@ def Application():
     
     return render_template('Application.html', application = data)
 
+@app.route("/ApplicationStatus", methods=['GET'])
+def ApplicationStatus():
+    cursor = db_conn.cursor()
+    cursor.execute('SELECT * FROM StudentApplication')
+    data = cursor.fetchall()
+    cursor.close()
+    
+    return render_template('ApplicationStatus.html', application = data)
+
 @app.route('/rejectStudentApplication/<string:id>', methods = ['POST', 'GET'])
 def rejectStudentApplication(id):
     cursor = db_conn.cursor()

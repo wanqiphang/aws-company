@@ -28,6 +28,32 @@
     <meta data-intl-tel-input-cdn-path="intlTelInput/">
   
     <style>
+      .btn-reject {
+        background-color: #ff0000;
+        padding: 7px 15px 7px 15px; 
+        color: #ffffff;
+        margin: 5px;
+        font-size:medium;
+      }
+  
+      .btn-reject:hover {
+        text-decoration: none;
+        color: white;
+      }
+  
+      .btn-approve {
+        background-color: #478ac9;
+        padding: 7px 15px 7px 15px; 
+        color: #ffffff;
+        margin: 5px;
+        font-size:medium;
+      }
+  
+      .btn-approve:hover {
+        text-decoration: none;
+        color: white;
+      }
+
       .popup-msg {
         background-color: #D1FFBD;
         padding: 10px 30px;
@@ -113,10 +139,8 @@
                 <td class="u-table-cell">{{ data[2] }}</td>
                 <td class="u-table-cell">{{ data[3] }}</td>
                 <td class="u-table-cell">
-                  <a href="/approveStudentApplication/{{data[0]}}" class="btn-approve"> Approve</a>
-                  <a href="/rejectStudentApplication/{{data[0]}}" class="btn-reject"> Reject</a>
-                  
-                    
+                  <a href="/approveStudentApplication/{{data[1]}}" class="btn-approve"> Approve</a>
+                  <a href="/rejectStudentApplication/{{data[1]}}" class="btn-reject"> Reject</a>
                 </td>
             </tr>
             {% endfor %}

@@ -176,10 +176,10 @@ def rejectStudentApplication(id):
     cursor = db_conn.cursor()
     status_change = 'rejected'
     cursor.execute('UPDATE StudentApplication SET status = %s WHERE student_id = %s', (status_change, id))
-    flash('Student Application Rejected Successfully')
+    flash('Student Application Rejected Successfully', 'success')
     db_conn.commit() 
     cursor.close()
-    return render_template('Application.html')
+    return redirect(url_for('Application'))
 
         
 
@@ -188,10 +188,10 @@ def approveStudentApplication(id):
     cursor = db_conn.cursor()
     status_change = 'approved'
     cursor.execute('UPDATE StudentApplication SET status = %s WHERE student_id = %s', (status_change, id))
-    flash('Student Application Approved Successfully')
+    flash('Student Application Approved Successfully', 'success')
     db_conn.commit() 
     cursor.close()
-    return render_template('Application.html')
+    return redirect(url_for('Application'))
 
     
 

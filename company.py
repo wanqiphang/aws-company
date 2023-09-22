@@ -132,12 +132,13 @@ def editJob(id):
 
     elif request.method == 'POST':
         # Update the job details in the database based on the form submission
+        job_id = request.form['job_id']
         job_title = request.form['job_title']
         job_location = request.form['job_location']
         min_req = request.form['min_req']
 
         cursor.execute('UPDATE job SET job_title = %s, job_location = %s, min_req = %s WHERE job_id = %s',
-                    (job_title, job_location, min_req, id))
+                    (job_title, job_location, min_req, job_id))
         db_conn.commit()
 
         cursor.close()

@@ -104,14 +104,12 @@ def addJob():
         # Initialize the cursor
         cursor = db_conn.cursor()
         
-        try:
+        try:         
+            insert_sql = "INSERT INTO job VALUES (%s, %s, %s)"
+            cursor.execute(insert_sql, (job_title, job_location, min_req))
+            db_conn.commit()
             # Get the auto-generated job_id
             auto_generated_job_id = cursor.lastrowid
-            
-            insert_sql = "INSERT INTO job VALUES (%s, %s, %s, %s)"
-            cursor.execute(insert_sql, (auto_generated_job_id, job_title, job_location, min_req))
-            db_conn.commit()
-            
         finally:
             cursor.close()
             return redirect(url_for('Jobs'))
@@ -120,7 +118,7 @@ def addJob():
     return render_template('AddJob.html')
 
 #
-@app.route("/edit/<string:id>", methods=['POST', 'GET'])
+@app.route("/edit/<int:id>", methods=['POST', 'GET'])
 def editJob(id):
     cursor = db_conn.cursor()
     if request.method == 'GET':
@@ -148,7 +146,7 @@ def editJob(id):
         return redirect(url_for('Jobs'))
 
 #
-@app.route("/delete/<string:id>", methods=['GET'])
+@app.route("/delete/<int:id>", methods=['GET'])
 def deleteJob(id):
     cursor = db_conn.cursor()
 

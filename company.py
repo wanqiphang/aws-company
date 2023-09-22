@@ -152,7 +152,7 @@ def deleteJob(id):
     cursor = db_conn.cursor()
 
     # Delete the job from the database based on the provided 'id'
-    cursor.execute("DELETE FROM job WHERE job_title = %s", (id))
+    cursor.execute("DELETE FROM job WHERE job_id = %s", (id))
     flash('Job Deleted Successfully')
     db_conn.commit()
     cursor.close()
